@@ -1,0 +1,13 @@
+-- option 2, delete this when running 
+
+@echo off
+
+set "vbs=%temp%\error.vbs"
+
+(
+echo MsgBox "{null} has performed an illegal operation and will be shut down." ^& vbCrLf ^& vbCrLf ^& "If the problem persists, contact the program vendor.", 16, "Application Error"
+) > "%vbs%"
+
+wscript "%vbs%"
+del "%vbs%"
+exit
