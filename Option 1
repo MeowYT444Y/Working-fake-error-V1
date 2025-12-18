@@ -1,0 +1,13 @@
+-- file 1, delete these when downloaded
+
+@echo off
+
+set "vbs=%temp%\launch_error.vbs"
+
+(
+echo MsgBox "Message by app: Sorry, your guide is corrupted. Please reinstall from the web you downloaded." ^& vbCrLf ^& vbCrLf ^& "Launch error code: 0xc3992837x", 16, "Launch Error"
+) > "%vbs%"
+
+wscript "%vbs%"
+del "%vbs%"
+exit
